@@ -14,20 +14,17 @@ function _init()
 end
 
 function _update(dt)
-    if input.key_held(input.KEY_W) then
-        y = y - 3
+    if input.held(input.LEFT) then
+        x = x - 4
     end
-
-    if input.key_held(input.KEY_S) then
-        y = y + 3
+    if input.held(input.RIGHT) then
+        x = x + 4
     end
-
-    if input.key_held(input.KEY_A) then
-        x = x - 3
+    if input.held(input.UP) then
+        y = y - 4
     end
-
-    if input.key_held(input.KEY_D) then
-        x = x + 3
+    if input.held(input.DOWN) then
+        y = y + 4
     end
 end
 
