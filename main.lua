@@ -1,3 +1,6 @@
+local x = 0
+local y = 0
+
 function _config()
     ---@type Usagi.Config
     return { name = "Game", game_id = "com.usagiengine.YOURGAMENAME" }
@@ -10,18 +13,25 @@ function _init()
     State = {}
 end
 
-local x = 0
-local y = 0
-
 function _update(dt)
-    if input.key_held(input.KEY_W) then y = y - 1 end
-    if input.key_held(input.KEY_S) then y = y + 1 end
-    if input.key_held(input.KEY_A) then x = x - 1 end
-    if input.key_held(input.KEY_D) then x = x + 1 end
+    if input.key_held(input.KEY_W) then
+        y = y - 3
+    end
+
+    if input.key_held(input.KEY_S) then
+        y = y + 3
+    end
+
+    if input.key_held(input.KEY_A) then
+        x = x - 3
+    end
+
+    if input.key_held(input.KEY_D) then
+        x = x + 3
+    end
 end
 
 function _draw(dt)
     gfx.clear(gfx.COLOR_BLACK)
-    gfx.text("Hello, Usagi!", 10, 10, gfx.COLOR_WHITE)
     gfx.rect_fill(x, y, 16, 16, gfx.COLOR_BLUE)
 end
