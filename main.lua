@@ -61,6 +61,9 @@ local function update_bullets()
         table.remove(enemies, j)
         table.remove(State.player.bullets, i)
         break
+      elseif bullet.y < 0 - bullet_height then
+        table.remove(State.player.bullets, i)
+        break
       end
     end
 
